@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>To-Do</title>
+</head>
+
+<body>
+    <header>
+        <h1>To-Do App</h1>
+    </header>
+    <main>
+        <div class="task-container">
+            <div class="task-form">
+                <h2>Escribe las tareas:</h2>
+                <form id="AddTaskForm">
+                    <div class="input-container">
+                        <label for="taskInput">Tarea:</label>
+                        <textarea type="text" id="taskInput" name="taskInput" required></textarea>
+                    </div>
+                    <button type="submit" id="buttonAdd" class="buttonAdd">Añadir tarea</button>
+                </form>
+            </div>
+            <div class="task-open">
+                <h2>Tareas pendientes</h2>
+                <ul class="task-list"></ul>
+            </div>
+            <div class="task-complete">
+                <h2>Tareas completadas</h2>
+                <ul class="task-list-complete"></ul>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./js/index.js"></script>
+
+</body>
+
+</html>
