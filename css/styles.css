@@ -143,9 +143,8 @@ button {
     }
 
     .button-container button {
-        width: 40%;
-        display: flex;
-        justify-content: end;
+        width: 50%;
+        text-align: center;
     }
 
 }
