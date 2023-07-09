@@ -9,5 +9,7 @@ export default class TaskCompleteController extends BaseController {
 
   removeComplete() {
     this.destiny.appendChild(this.element);
+    const button = this.element.querySelector('.complete');
+    button.remove();
   }
 }

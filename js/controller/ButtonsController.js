@@ -33,7 +33,9 @@ export default class ButtonController extends BaseController {
     if (taskValue.length >= 5) {
       const task = this.normalizeText(taskValue);
       new TaskAddController(taskList, task);
-      form.removeChild(errorElement);
+      if (errorElement) {
+        form.removeChild(errorElement);
+      }
     } else {
       if (!errorElement) {
         const errorElement = document.createElement('p');
