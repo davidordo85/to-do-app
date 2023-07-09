@@ -22,7 +22,7 @@ export default class ButtonController extends BaseController {
         const errorElement = form.querySelector('.error-message');
         this.error(taskValue, errorElement, taskList, form);
       } else if (button === 'delete') {
-        new TaskDeleteController(element);
+        this.confirmDeleteList(element);
       } else if (button === 'complete') {
         new TaskCompleteController(element);
       }
@@ -51,5 +51,14 @@ export default class ButtonController extends BaseController {
     task = task.charAt(0).toUpperCase() + task.slice(1);
     task = task.replace(/[^\w\s]/gi, '');
     return task;
+  }
+
+  confirmDeleteList(element) {
+    const confirmation = confirm(
+      '¿Estas seguro de que deseas borrar esta lista?',
+    );
+    if (confirmation) {
+      new TaskDeleteController(element);
+    }
   }
 }
