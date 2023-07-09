@@ -38,6 +38,20 @@ body {
     align-items: center;
 }
 
+.input-container label {
+    margin-top: 1rem;
+    ;
+}
+
+.input-container select {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-container #dueDate {
+    width: 100%;
+}
+
 .task-open {
     border: solid 0.1rem black;
 }

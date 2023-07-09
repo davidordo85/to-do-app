@@ -19,7 +19,17 @@
                     <div class="input-container">
                         <label for="taskInput">Tarea:</label>
                         <textarea type="text" id="taskInput" name="taskInput" required></textarea>
+                        <label for="dueDate">Fecha de vencimiento:</label>
+                        <input type="date" id="dueDate" name="dueDate">
+                        <label for="priority">Prioridad:</label>
+                        <select id="priority" name="priority">
+                            <option value="">Elige la prioridad:</option>
+                            <option value="alta">Alta</option>
+                            <option value="media">Media</option>
+                            <option value="baja">Baja</option>
+                        </select>
                     </div>
+
                     <button type="submit" id="buttonAdd" class="buttonAdd">Añadir tarea</button>
                 </form>
             </div>

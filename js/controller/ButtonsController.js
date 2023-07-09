@@ -14,10 +14,12 @@ export default class ButtonController extends BaseController {
       event.preventDefault();
       const button = event.target.classList.value;
       const element = event.target.parentElement.parentElement;
-      console.log(button);
       if (button === 'buttonAdd') {
         const form = event.target.form;
-        const taskValue = form.elements.taskInput.value;
+        const taskMessage = form.elements.taskInput.value;
+        const taskDate = form.elements.dueDate.value;
+        const taskPriority = form.elements.priority.value;
+        const taskValue = { taskMessage, taskDate, taskPriority };
         const taskList = document.querySelector('.task-list');
         const errorElement = form.querySelector('.error-message');
         this.error(taskValue, errorElement, taskList, form);
@@ -30,9 +32,9 @@ export default class ButtonController extends BaseController {
   }
 
   error(taskValue, errorElement, taskList, form) {
-    if (taskValue.length >= 5) {
-      const task = this.normalizeText(taskValue);
-      new TaskAddController(taskList, task);
+    if (taskValue.taskMessage.length >= 5) {
+      /* const task = this.normalizeText(taskValue.taskMessage); */
+      new TaskAddController(taskList, taskValue);
       if (errorElement) {
         form.removeChild(errorElement);
       }
@@ -44,13 +46,6 @@ export default class ButtonController extends BaseController {
         form.appendChild(errorElement);
       }
     }
-  }
-
-  normalizeText(taskValue) {
-    let task = taskValue.trim();
-    task = task.charAt(0).toUpperCase() + task.slice(1);
-    task = task.replace(/[^\w\s]/gi, '');
-    return task;
   }
 
   confirmDeleteList(element) {
